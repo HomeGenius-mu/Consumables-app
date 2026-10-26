@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>HomeGenius Consumables</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#b45309"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<style id="css">
+*{box-sizing:border-box}body{margin:0;background:#e9edf2;font-family:Arial,Helvetica,sans-serif;color:#1b2433}
+.bar{position:sticky;top:0;z-index:6;display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;background:#1f2937;align-items:center}
+.bar button{font-size:16px;padding:12px 16px;border:0;border-radius:10px;background:#b45309;color:#fff;font-weight:700}.bar .g{background:#374151}.bar span{color:#cbd5e1;font-size:13px;margin-left:auto}
+.tot{position:sticky;top:68px;z-index:5;display:flex;gap:18px;flex-wrap:wrap;align-items:center;padding:8px 16px;background:#fff7ed;border-bottom:2px solid #b45309;font-size:16px}
+.tot b{font-size:20px}.tot label{margin-left:auto;font-size:14px}
+#sheet{background:#fff;max-width:1100px;margin:14px auto;padding:22px 26px;border-radius:6px}
+.lg{height:64px;width:auto}h1{text-align:center;font-size:20px;letter-spacing:.06em;margin:12px 0}
+h3{font-size:15px;margin:20px 0 6px;color:#92400e}h3 small{color:#6b7280;font-weight:400}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}.f{display:flex;align-items:center;gap:8px;font-size:14px;margin:7px 0}.f label{white-space:nowrap;font-weight:700}
+input,textarea{font:inherit;font-size:16px;color:#1b2433;background:#fff;width:100%;min-width:0;border:0;border-bottom:1px dotted #8a94a6;padding:9px 4px;border-radius:0}
+input:focus,textarea:focus{outline:0;background:#fff7ed}textarea{border:1px solid #8a94a6;border-radius:4px;padding:8px;min-height:64px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}th{font-size:12px;background:#f1f3f6}th,td{border:1px solid #8a94a6;padding:0}
+td input{border:0;padding:11px 6px;min-height:44px}td small{display:block;font-size:11px;color:#6b7280;padding:0 6px 4px}
+.co,.qt{text-align:right}.am,.sl{text-align:right;padding:0 8px;font-size:15px;white-space:nowrap}.sub td{background:#fff7ed;font-weight:700;text-align:right;padding:8px}
+.used .qt{background:#fef3c7}.add{font-size:14px;padding:9px 14px;border:1px solid #b45309;color:#b45309;background:#fff;border-radius:8px;margin-top:6px}
+.sum td{padding:8px 10px;font-size:16px}.sum .big td{font-size:20px;font-weight:700;background:#fff7ed}
+.ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);display:none;z-index:9;padding:16px}.ov.on{display:block}
+.box{background:#fff;max-width:560px;margin:30px auto;border-radius:12px;padding:16px;max-height:84%;overflow:auto}
+.it2{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid #e5e7eb}.it2 b{flex:1;font-size:15px}.it2 small{color:#6b7280}
+.it2 button,.box .cl{font-size:14px;padding:8px 12px;border-radius:8px;border:1px solid #b45309;background:#fff;color:#b45309}.it2 .d{border-color:#e5484d;color:#e5484d}
+body.uo .row:not(.used){display:none}body.uo .grp:not(.has){display:none}
+.ft{text-align:center;font-size:12px;margin-top:22px;line-height:1.6}
+@media(max-width:700px){.cols{grid-template-columns:1fr}#sheet{padding:14px}}
+@media print{.bar,.tot,.add,.ov,.noprint{display:none!important}body{background:#fff}#sheet{margin:0;max-width:none;padding:0}.row:not(.used){display:none}.grp:not(.has){display:none}input,textarea{font-size:12px}}
+</style></head><body>
+<div class="bar noprint"><button id="be">Save &amp; Email</button><button class="g" id="bn">New</button><button class="g" id="bs">Save</button><button class="g" id="bl">Saved</button><button class="g" id="bd">Download file</button><button class="g" id="bp">Print / PDF</button><button class="g" id="bt">Settings</button><span id="st"></span></div>
+<div class="tot noprint"><span>Cost <b id="tc">0.00</b></span><span>Selling <b id="ts">0.00</b></span><span>Margin <b id="tm">0.00</b></span><label><input type="checkbox" id="uo" style="width:22px;height:22px;vertical-align:middle"> Used items only</label></div>
+<div id="sheet">
+<img class="lg" alt="HomeGenius" src="data:image/png;base64,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">
+<h1>CONSUMABLES ESTIMATE</h1>
+<div class="cols"><div><div class="f"><label>Client Name :</label><input data-k="cn"></div><div class="f"><label>Site Address :</label><input data-k="sa"></div><div class="f"><label>Contact Person :</label><input data-k="cp"></div></div>
+<div><div class="f"><label>Telephone :</label><input data-k="ct" type="tel"></div><div class="f"><label>Date :</label><input data-k="dt" type="date"></div><div class="f"><label>Prepared by :</label><input data-k="pb"></div></div></div>
+<div id="groups"></div>
+<h3>SUMMARY</h3><table class="sum"><tr><td>Total cost</td><td id="sc" style="text-align:right"></td></tr><tr><td id="sml">Total selling (cost + markup)</td><td id="ss" style="text-align:right"></td></tr><tr class="big"><td>Margin</td><td id="sm" style="text-align:right"></td></tr></table>
+<div class="f" style="margin-top:14px"><label>Notes :</label></div><textarea data-k="nt"></textarea>
+<div class="ft"><b>HomeGenius Ltd</b> - BRN C24212791<br>48, Rue Des Marguerites, Montreal 2, Coromandel, Mauritius - Tel : +230 5721 4111 - Email : sav.homegenius@gmail.com</div>
+</div>
+<div class="ov" id="ls"><div class="box"><div style="display:flex;justify-content:space-between"><b>Saved estimates</b><button class="cl" id="lc">Close</button></div><div id="li"></div></div></div>
+<div class="ov" id="cf"><div class="box"><b>Settings</b>
+<p style="font-size:13px;margin:10px 0 2px">Markup % on materials (selling = cost + markup)</p><input id="cm" inputmode="decimal" style="border:1px solid #8a94a6;border-radius:6px">
+<p style="font-size:13px;margin:10px 0 2px">Web app URL (ends with /exec)</p><input id="cu" style="border:1px solid #8a94a6;border-radius:6px">
+<p style="font-size:13px;margin:10px 0 2px">Secret key</p><input id="ck" style="border:1px solid #8a94a6;border-radius:6px">
+<p style="margin-top:14px"><button class="cl" id="cs1" style="background:#b45309;color:#fff">Save</button> <button class="cl" id="cx">Cancel</button></p>
+<p><button class="cl" id="cdp">Use current cost prices as my defaults</button></p><p><button class="cl" id="crp">Reset prices to the original list</button></p></div></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function msg(t){$('#st').textContent=t;clearTimeout(msg.t);msg.t=setTimeout(()=>$('#st').textContent='',6000)}
+const num=v=>parseFloat(String(v).replace(/,/g,'.').replace(/[^\d.\-]/g,''))||0;
+const fmt=n=>(Math.round(n*100)/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const today=()=>new Date().toISOString().slice(0,10);
+const DEF=[
+{name:'Conduits, trunking & cables',mk:1,items:[['PVC Conduit 25 mm',90],['Trunking 20*10',55],['Trunking 40*20',85],['Elbow 25 mm',10],['Clips 25 mm',10],['Tee 25mm',15],['iso gris',35],['iso orange',45],['Socket 25 mm',15],['Septor 1"',255],['Septor 3/4"',200],['Alarm cable 4 core',15,'sheet note: 100 m = 1,450'],['Electric cable red&black',78]]},
+{name:'Connectors, tools & power',mk:1,items:[['RJ 45',25],['RJ 45 Cat 7',40],['Climping Tool RJ 45',550],['Plexo 4*4',85],['DC Jack',55],['Battery 12V + Clips',700],['Adaptor 12A',175]]},
+{name:'Network cable',mk:1,items:[['Cable Cat 6',24.5]]},
+{name:'Equipment',mk:1,items:[['Data Cabinet 6U',3680],['Extension Cord',375],['UPS 1KvA',3000],['UPS 2KvA',6440],['Bullet HDCVI 5mp ColorVu',1725],['DVR 16ch',6550],['PoE Switch 4-Port',1380],['PoE Switch 8-Port',2530],['PoE Switch 16-Port',8625],['Hard Disk 2tb',3600],['Hard Disk 4tb',11040],['Hard Disk 8tb',11902.5],['SD 256 GB',2000]]},
+{name:'Labour & transport (no markup)',mk:0,items:[['Labour',1700],['Transport',15]]}];
+const LK='hg_cons',CK='hg_cons_cfg',PK='hg_cons_prices';
+const rd=(k,d)=>{try{return JSON.parse(localStorage.getItem(k)||'null')||d}catch(e){return d}};
+const wr=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){msg('Storage full / unavailable');return false}};
+const cfg=()=>{const c=rd(CK,{});if(!c.url){const o=rd('hg_ccfg',null)||rd('hg_cfg',{});if(o.url){c.url=o.url;c.key=o.key}}return c};
+let S={groups:[],pct:50},cur=null;
+function fresh(){const p=rd(PK,{});return DEF.map(g=>({name:g.name,mk:g.mk,items:g.items.map(i=>[i[0],p[i[0]]!==undefined?p[i[0]]:i[1],'',i[2]||''])}))}
+function render(){const g=$('#groups');g.innerHTML='';
+ S.groups.forEach((G,gi)=>{const sec=document.createElement('div');sec.className='grp';
+  sec.innerHTML='<h3>'+G.name.replace(/&/g,'&amp;')+'</h3><table><thead><tr><th>ITEM</th><th style="width:15%">COST PRICE</th><th style="width:11%">QTY</th><th style="width:16%">AMOUNT</th><th style="width:16%" class="slh">SELLING</th></tr></thead><tbody></tbody><tfoot><tr class="sub"><td colspan="3">Subtotal</td><td class="gc"></td><td class="gs"></td></tr></tfoot></table><button class="add noprint">+ Add item</button>';
+  const tb=sec.querySelector('tbody');G.items.forEach((it,ii)=>tb.appendChild(rowEl(gi,ii)));
+  sec.querySelector('.add').onclick=()=>{G.items.push(['',0,'','']);tb.appendChild(rowEl(gi,G.items.length-1));tb.lastChild.querySelector('.nm').focus()};
+  g.appendChild(sec)});recalc()}
+function rowEl(gi,ii){const it=S.groups[gi].items[ii],tr=document.createElement('tr');tr.className='row';
+ tr.innerHTML='<td><input class="nm"><small></small></td><td><input class="co" inputmode="decimal"></td><td><input class="qt" inputmode="decimal"></td><td class="am"></td><td class="sl"></td>';
+ const nm=tr.querySelector('.nm'),co=tr.querySelector('.co'),qt=tr.querySelector('.qt');nm.value=it[0];co.value=it[1];qt.value=it[2];tr.querySelector('small').textContent=it[3]||'';if(!it[3])tr.querySelector('small').remove();
+ const up=()=>{it[0]=nm.value;it[1]=co.value;it[2]=qt.value;recalc();draft()};[nm,co,qt].forEach(i=>i.oninput=up);tr.dataset.g=gi;tr.dataset.i=ii;return tr}
+function recalc(){const k=1+num(S.pct)/100;let C=0,Sl=0;
+ $$('.grp').forEach((sec,gi)=>{const G=S.groups[gi];let gc=0,any=false;
+  sec.querySelectorAll('tbody tr').forEach(tr=>{const it=G.items[+tr.dataset.i],q=num(it[2]),a=num(it[1])*q;gc+=a;const used=q>0;any=any||used;tr.classList.toggle('used',used);
+   tr.querySelector('.am').textContent=used?fmt(a):'';tr.querySelector('.sl').textContent=used?fmt(G.mk?a*k:a):''});
+  const gs=G.mk?gc*k:gc;sec.querySelector('.gc').textContent=fmt(gc);sec.querySelector('.gs').textContent=fmt(gs);sec.classList.toggle('has',any);
+  sec.querySelector('.slh').textContent=G.mk?'SELLING (+'+num(S.pct)+'%)':'SELLING';C+=gc;Sl+=gs});
+ ['tc','sc'].forEach(i=>$('#'+i).textContent=fmt(C));['ts','ss'].forEach(i=>$('#'+i).textContent=fmt(Sl));['tm','sm'].forEach(i=>$('#'+i).textContent=fmt(Sl-C));
+ $('#sml').textContent='Total selling (materials + '+num(S.pct)+'% markup)'}
+function collect(){const f={};$$('[data-k]').forEach(i=>f[i.dataset.k]=i.value);return{f,groups:JSON.parse(JSON.stringify(S.groups)),pct:S.pct}}
+function load(d){reset();$$('[data-k]').forEach(i=>{if(d.f[i.dataset.k]!==undefined)i.value=d.f[i.dataset.k]});S.groups=d.groups;S.pct=d.pct!==undefined?d.pct:S.pct;render()}
+function reset(){$$('[data-k]').forEach(i=>i.value='');$('[data-k=dt]').value=today();S.groups=fresh();S.pct=rd(CK,{}).pct!==undefined?rd(CK,{}).pct:50;cur=null;render()}
+function draft(){clearTimeout(draft.t);draft.t=setTimeout(()=>wr('hg_cons_draft',{cur,d:collect()}),600)}
+document.addEventListener('input',e=>{if(e.target.dataset&&e.target.dataset.k)draft()});
+$('#uo').onchange=e=>document.body.classList.toggle('uo',e.target.checked);
+const all=()=>rd(LK,[]);
+function store(want){const d=collect(),a=all(),t=(d.f.cn||'No name')+' \u00b7 '+(d.f.dt||'');if(!cur)cur=Date.now();
+ const i=a.findIndex(x=>x.id==cur),rec={id:cur,t,d,ts:Date.now(),sent:false,want:!!want};if(i>=0)a[i]=rec;else a.unshift(rec);return wr(LK,a)?rec:null}
+async function send(rec){const c=cfg();if(!c.url||!c.key){msg('Tap Settings and enter the web app URL and key first');return false}
+ try{const r=await fetch(c.url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'consumables',key:c.key,id:'k'+rec.id+'_'+rec.ts,f:rec.d.f,groups:rec.d.groups,pct:rec.d.pct})});
+  const j=await r.json();if(j&&j.ok){const a=all(),i=a.findIndex(x=>x.id==rec.id&&x.ts==rec.ts);if(i>=0){a[i].sent=true;wr(LK,a)}return true}
+  msg('Server refused: '+((j&&j.error)||'check the key'));return false}catch(e){return false}}
+$('#be').onclick=async()=>{if(!$('[data-k=cn]').value){msg('Enter the client name first');return}const rec=store(true);if(!rec)return;msg('Sending\u2026');
+ if(await send(rec)){msg('Saved & emailed \u2713');alert('Estimate saved and emailed')}else msg('Saved on tablet \u2013 not sent yet (Saved > Send)')};
+$('#bs').onclick=()=>{if(store(false))msg('Saved \u2713')};
+$('#bn').onclick=()=>{if(confirm('Start a new blank estimate?'))reset()};
+function showList(){const a=all();$('#li').innerHTML=a.length?'':'<p>Nothing saved yet.</p>';a.forEach(x=>{const e=document.createElement('div');e.className='it2';
+ e.innerHTML='<b></b><small></small><button>Open</button><button>Send</button><button class="d">Delete</button>';e.querySelector('b').textContent=x.t;e.querySelector('small').textContent=x.sent?'\u2713 sent':'not sent';const bt=e.querySelectorAll('button');
+ bt[0].onclick=()=>{load(x.d);cur=x.id;$('#ls').classList.remove('on')};bt[1].onclick=async()=>{msg('Sending\u2026');const ok=await send(x);msg(ok?'Emailed \u2713':'Not sent');showList()};
+ bt[2].onclick=()=>{if(confirm('Delete this estimate?')){wr(LK,all().filter(y=>y.id!=x.id));showList()}};$('#li').appendChild(e)});$('#ls').classList.add('on')}
+$('#bl').onclick=showList;$('#lc').onclick=()=>$('#ls').classList.remove('on');$('#bp').onclick=()=>window.print();
+$('#bt').onclick=()=>{const c=cfg();$('#cu').value=c.url||'';$('#ck').value=c.key||'';$('#cm').value=S.pct;$('#cf').classList.add('on')};
+$('#cx').onclick=()=>$('#cf').classList.remove('on');
+$('#cs1').onclick=()=>{const c=rd(CK,{});c.url=$('#cu').value.trim();c.key=$('#ck').value.trim();c.pct=num($('#cm').value);wr(CK,c);S.pct=c.pct;recalc();draft();$('#cf').classList.remove('on');msg('Settings saved')};
+$('#cdp').onclick=()=>{const p={};S.groups.forEach(g=>g.items.forEach(i=>{if(i[0])p[i[0]]=num(i[1])}));wr(PK,p);msg('Current prices saved as defaults')};
+$('#crp').onclick=()=>{if(confirm('Reset all default prices to the original list?')){try{localStorage.removeItem(PK)}catch(e){}msg('Defaults reset (applies to new estimates)')}};
+$('#bd').onclick=()=>{const d=collect(),k=1+num(d.pct)/100,f=d.f;let C=0,Sl=0,b='';
+ d.groups.forEach(g=>{const u=g.items.filter(i=>num(i[2])>0);if(!u.length)return;let gc=0;
+  const r=u.map(i=>{const a=num(i[1])*num(i[2]);gc+=a;return '<tr><td>'+esc(i[0])+'</td><td align=right>'+fmt(num(i[1]))+'</td><td align=center>'+esc(i[2])+'</td><td align=right>'+fmt(a)+'</td></tr>'}).join('');
+  const gs=g.mk?gc*k:gc;C+=gc;Sl+=gs;b+='<h3>'+esc(g.name)+'</h3><table border=1 cellpadding=5 style="border-collapse:collapse;width:100%"><tr><th>Item</th><th>Cost price</th><th>Qty</th><th>Amount</th></tr>'+r+'<tr><td colspan=3 align=right><b>Subtotal (cost)</b></td><td align=right><b>'+fmt(gc)+'</b></td></tr>'+(g.mk?'<tr><td colspan=3 align=right>With '+num(d.pct)+'% markup</td><td align=right>'+fmt(gs)+'</td></tr>':'')+'</table>'});
+ const h='<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Consumables</title></head><body style="font-family:Arial;font-size:13px;max-width:900px;margin:auto;padding:16px"><img style="height:64px" src="'+$('.lg').src+'"><h2>CONSUMABLES ESTIMATE</h2><p><b>Client:</b> '+esc(f.cn)+'<br><b>Site:</b> '+esc(f.sa)+'<br><b>Contact:</b> '+esc(f.cp)+' '+esc(f.ct)+'<br><b>Date:</b> '+esc(f.dt)+' &nbsp; <b>Prepared by:</b> '+esc(f.pb)+'</p>'+b+
+  '<h3>Summary</h3><p>Total cost: <b>'+fmt(C)+'</b><br>Total selling: <b>'+fmt(Sl)+'</b><br>Margin: <b>'+fmt(Sl-C)+'</b></p><p>'+esc(f.nt).replace(/\n/g,'<br>')+'</p></body></html>';
+ const lk=document.createElement('a');lk.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));lk.download='Consumables_'+(f.cn||'estimate').replace(/[^\w\-]+/g,'_')+'_'+today()+'.html';document.body.appendChild(lk);lk.click();lk.remove();setTimeout(()=>URL.revokeObjectURL(lk.href),5000)};
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+async function flush(){if(!cfg().url||!navigator.onLine)return;for(const x of all().filter(y=>y.want&&!y.sent)){if(await send(x))msg('Sent: '+x.t)}}
+addEventListener('online',flush);setTimeout(flush,3000);
+reset();const dr=rd('hg_cons_draft',null);if(dr&&dr.d&&dr.d.groups){load(dr.d);cur=dr.cur;msg('Draft restored')}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
